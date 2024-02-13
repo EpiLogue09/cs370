@@ -23,7 +23,8 @@ will never provide an explanation." + '\n' + "The story and the question are as 
 
     #print(prompt)
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        #model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.5,
         max_tokens=10,
@@ -36,18 +37,19 @@ def main():
     parser = argparse.ArgumentParser(description='OpenAI Chatbot')
     #parser.add_argument('--prompt', type=str, help="This is a prompt")
     #let the user interact with the chatbot via realtime terminal input
-    parser.add_argument('--story', type=str, help="This is a story")
-    parser.add_argument('--question', type=str, help="This is a question")
+    #parser.add_argument('--story', type=str, help="This is a story")
+    #parser.add_argument('--question', type=str, help="This is a question")
     story = "Jack had eaten a cake full of cyanide, a poisonous substance. \
-    He was rushed to the hospital, and when the doctors try to save him, his wife was asked to sign a consent form.\
-    The wife refused to sign the consent form, and Jack hence died in the hospital."
+He was rushed to the hospital, and when the doctors try to save him, his wife \
+was asked to sign a consent form.\
+The wife refused to sign the consent form, and Jack hence died in the hospital."
     story_prompt = "Jack ate a cake and died"
     print("Thank you for playing DetectAIve! Now you will ask question to figure out what truly happened!")
     print("Your story is: " + story_prompt)
     print()
     while True:
         question = input("Ask your question (type 'exit' to exit the question mode): ")
-        if question == "exit":
+        if question.lower() == "exit":
             break
         result = openai_chat(question, story)
         print(result)
