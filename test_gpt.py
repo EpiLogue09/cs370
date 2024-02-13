@@ -39,13 +39,15 @@ def main():
     #let the user interact with the chatbot via realtime terminal input
     #parser.add_argument('--story', type=str, help="This is a story")
     #parser.add_argument('--question', type=str, help="This is a question")
-    story = "Jack had eaten a cake full of cyanide, a poisonous substance. \
-He was rushed to the hospital, and when the doctors try to save him, his wife \
-was asked to sign a consent form.\
-The wife refused to sign the consent form, and Jack hence died in the hospital."
-    story_prompt = "Jack ate a cake and died"
-    print("Thank you for playing DetectAIve! Now you will ask question to figure out what truly happened!")
-    print("Your story is: " + story_prompt)
+    story = "Jack is having his birthday party today. He has a 3 month old dog, who accidentally ate the whole 12oz \
+chocolate cake which is intended to be given to people who comes to the house for the party. \
+Since the chocolate is toxic to the dogs, and Jack's dog is a particularly young one (which makes him more sensitive to \
+the toxins, i.e., chocolate). When Jack finds his dog in the living room, the dog is already dead. Jack is very sad \
+and arranges a funeral for the dog. Note that the chocolate is in itself not a poison, hence you should answer 'maybe' if\
+the user asks about food poisoning or anything related."
+    story_prompt = "It is Jake's birthday today. His dog died in the afternoon."
+    print("Thank you for playing the Beta version of DetectAIve! You will act as a detective and ask any questions that can get you closer to the truth!")
+    print("Your riddle is: " + story_prompt)
     print()
     while True:
         question = input("Ask your question (type 'exit' to exit the question mode): ")
