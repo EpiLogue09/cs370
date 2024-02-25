@@ -1,4 +1,4 @@
--- Active: 1708197661893@@127.0.0.1@3306
+-- Active: 1708197661893@@localhost@3306@DetectAIveDB
 CREATE DATABASE IF NOT EXISTS DetectAIveDB;
 USE DetectAIveDB;
 
